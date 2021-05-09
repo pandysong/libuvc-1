@@ -27,3 +27,11 @@ Then you can start them with `./example` and `./uvc_test` respectively. Note tha
 The documentation for `libuvc` can currently be found at https://int80k.com/libuvc/doc/.
 
 Happy hacking!
+
+# xu example
+
+This fork adds xu command to control rockchip UVC device.
+
+# how to use
+
+type `./xu` after build to show the usage.

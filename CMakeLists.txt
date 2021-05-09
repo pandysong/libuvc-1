@@ -22,6 +22,7 @@ if(NOT CMAKE_BUILD_TARGET)
 endif()
 
 option(BUILD_EXAMPLE "Build example program" ON)
+option(BUILD_XU "Build xu example program" ON)
 option(BUILD_TEST "Build test program" OFF)
 option(ENABLE_UVC_DEBUGGING "Enable UVC debugging" OFF)
 
@@ -131,6 +132,16 @@ if(BUILD_EXAMPLE)
   add_executable(example src/example.c)
   find_package(Threads)
   target_link_libraries(example
+    PRIVATE
+      LibUVC::UVC
+      Threads::Threads
+  )
+endif()
+
+if(BUILD_XU)
+  add_executable(xu src/xu.c)
+  find_package(Threads)
+  target_link_libraries(xu
     PRIVATE
       LibUVC::UVC
       Threads::Threads
